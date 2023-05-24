@@ -2,6 +2,9 @@
 const inquirer = require('inquirer');
 const fetch = require('node-fetch');
 const fs = require("fs");
+const { generateSVG } = require("./lib/generateSVG");
+const { generateShape } = require("./lib/generateShape");
+
 
 // Prompts to determine logo properties
 function promptUser() {
@@ -25,14 +28,46 @@ function promptUser() {
         {
           type: "list",
           message: "Select your desired shape (use arrow keys)",
-          choices: ["Circle", "Triangle", "Square", "Hexagon" ],
+          choices: ["Circle", "Triangle", "Square"],
           name: "shape",
         },
         // Request background colour
         {
           type: "input",
           message:
-            "Enter your preferred background colour (hexadecimal code or word eg (128,128,128) or (grey))",
-          name: "shapeBackgroundColor",
+            "Enter your preferred background colour (hexadecimal code or word eg (128,128,128) or (gray))",
+          name: "backgroundColour",
         },
-      ])}
+      ])
+      .then((answers) => {
+        const { text, textColour, shape, backgroundColour } = answers;
+  
+        // Creat SVG file based on above prefences
+        const svgCode = generateSVG(text, textColour, shape, backgroundColour);
+  
+        // Save to file
+        fs.writeFile("logo.svg", svgCode, (err) => {
+          if (err) {
+            console.error("Error creating logo.svg:", err);
+            return;
+          }
+  
+          console.log("Check out your logo.svg!");
+        });
+      });
+  }
+    //   .then((data) => {
+    //     const svgPath = "./dist/logo.svg";
+    //     const finalLogo = generateShape(data);
+    
+        //Create logo
+    //     fs.writeFile(svgPath, generateSVG(finalLogo), (err) =>
+    //       err ? console.error(err) : console.log("Generated logo.svg")
+    //     );
+    //   })}
+    //   .catch((err) => console.error(err));
+
+//Run the function
+      promptUser();
+
+    
