@@ -2,7 +2,7 @@
 const inquirer = require('inquirer');
 const fetch = require('node-fetch');
 const fs = require("fs");
-const { generateSVG } = require("./lib/generateSVG");
+const generateSVG = require("./lib/generateSVG");
 
 // Prompts to determine logo properties
 function promptUser() {
