@@ -1,5 +1,5 @@
 {
-    "name": "Module10-svg-Generator",
+    "name": "svg-generator-challenge",
     "version": "1.0.0",
     "description": "",
     "main": "index.js",
@@ -12,7 +12,7 @@
     "license": "ISC",
   "dependencies": {
       "inquirer": "^8.2.4",
-      "node-fetch": "^2.6.7",
+      "node-fetch": "^2.6.7"
     },
    "devDependencies": {
     "jest": "^29.5.0"
