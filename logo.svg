@@ -1,8 +1,8 @@
 
     <svg xmlns="http://www.w3.org/2000/svg" width="300" height="200" viewBox="0 0 300 200">
       <g transform="translate(150 100)">
-        <rect x="-90" y="-90" width="180" height="180" fill="yellow" />
-        <text x="0" y="0" dominant-baseline="middle" text-anchor="middle" fill="green" font-size="60">xxx</text>
+        <circle cx="0" cy="0" r="80" fill="fd" />
+        <text x="0" y="0" dominant-baseline="middle" text-anchor="middle" fill="fdsfsd" font-size="80" style="font-family: Papyrus;">fds</text>
       </g>
     </svg>
   

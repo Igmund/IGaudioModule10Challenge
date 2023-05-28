@@ -17,8 +17,9 @@ function promptUser() {
       {
         type: 'input',
         message:
-          'Enter your preferred logo colour (hexadecimal code or word eg (255,192,203) or (pink))',
+          'Enter your preferred logo colour (hexadecimal code or word e.g., #FF0000 or red)',
         name: 'textColour',
+        validate: validateColourInput, // Validate color input
       },
       // Request shape
       {
@@ -31,8 +32,9 @@ function promptUser() {
       {
         type: 'input',
         message:
-          'Enter your preferred shape colour (hexadecimal code or word eg (128,128,128) or (gray))',
+          'Enter your preferred shape colour (hexadecimal code or word e.g., #0000FF or blue)',
         name: 'shapeColour',
+        validate: validateColourInput, // Validate colour input
       },
     ])
     .then((data) => {
@@ -46,7 +48,27 @@ function promptUser() {
         }
         console.log('Generated logo.svg');
       });
+    })
+    .catch((error) => {
+      console.error('Error:', error.message);
+      promptUser(); // Prompt the user again to enter the missing or invalid input
     });
+}
+
+// Colour input validation function
+function validateColourInput(input) {
+  // Regular expression to match valid hexadecimal colours (#ABC, #ABCDEF, #123456)
+  const hexColourRegex = /^#([A-Fa-f0-9]{3}){1,2}$/;
+  // Regular expression to match valid word colours (red, blue, gray, etc.)
+  const wordColourRegex = /^[a-zA-Z]+$/;
+
+  if (input.trim() === '') {
+    throw new Error('Please enter a colour (hexadecimal code or word).'); // Empty colour input
+  } else if (input.match(hexColourRegex) || input.match(wordColourRegex)) {
+    return true; // Valid colour input
+  } else {
+    throw new Error('Please enter a valid colour (hexadecimal code or word).'); // Invalid colour input
+  }
 }
 
 // Run the function
