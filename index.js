@@ -17,7 +17,7 @@ function promptUser() {
       {
         type: 'input',
         message:
-          'Enter your preferred logo colour (hexadecimal code or word e.g., #FF0000 or red)',
+          'Enter your preferred logo colour (hexadecimal code or word e.g., #FFC0CB or pink)',
         name: 'textColour',
         validate: validateColourInput, // Validate color input
       },
@@ -59,12 +59,13 @@ function promptUser() {
 function validateColourInput(input) {
   // Regular expression to match valid hexadecimal colours (#ABC, #ABCDEF, #123456)
   const hexColourRegex = /^#([A-Fa-f0-9]{3}){1,2}$/;
-  // Regular expression to match valid word colours (red, blue, gray, etc.)
-  const wordColourRegex = /^[a-zA-Z]+$/;
+  // Array of valid colour words
+  const validColourWords = ['red', 'blue', 'green', 'yellow', 'pink', 'purple', 'orange', 'brown', 'black', 'white', 'gray', 'silver', 'gold', 'navy', 'teal', 'olive', 'maroon', 'aqua', 'coral', 'indigo', 'lavender', 'mint', 'peach', 'ruby', 'turquoise', 'violet', 'amber', 'charcoal', 'emerald', 'fuchsia'];
+ 
 
   if (input.trim() === '') {
     throw new Error('Please enter a colour (hexadecimal code or word).'); // Empty colour input
-  } else if (input.match(hexColourRegex) || input.match(wordColourRegex)) {
+  } else if (input.match(hexColourRegex) || validColourWords.includes(input.toLowerCase())) {
     return true; // Valid colour input
   } else {
     throw new Error('Please enter a valid colour (hexadecimal code or word).'); // Invalid colour input
