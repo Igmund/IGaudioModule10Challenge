@@ -1,9 +1,8 @@
 
     <svg xmlns="http://www.w3.org/2000/svg" width="300" height="200" viewBox="0 0 300 200">
-      <rect width="300" height="200" fill="null" />
       <g transform="translate(150 100)">
-        <circle cx="100" cy="100" r="80" fill="yellow" />
-        <text x="0" y="0" dominant-baseline="middle" text-anchor="middle" fill="blue" font-size="60">IIG</text>
+        <rect x="-90" y="-90" width="180" height="180" fill="yellow" />
+        <text x="0" y="0" dominant-baseline="middle" text-anchor="middle" fill="green" font-size="60">xxx</text>
       </g>
     </svg>
   
