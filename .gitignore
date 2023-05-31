@@ -24,4 +24,6 @@ Temporary Items
 .apdisk
 
 # Node Modules
-node_modulesSSHWET
+node_modules
+package-lock.json
+IGaudioModule10Challenge.code-workspace
