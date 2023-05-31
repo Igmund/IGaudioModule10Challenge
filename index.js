@@ -57,7 +57,7 @@ function promptUser() {
 
 // Colour input validation function
 function validateColourInput(input) {
-  // Regular expression to match valid hexadecimal colours (#ABC, #ABCDEF, #123456)
+  // Expression to match valid hexadecimal colours (#ABC, #ABCDEF, #123456)
   const hexColourRegex = /^#([A-Fa-f0-9]{3}){1,2}$/;
   // Array of valid colour words
   const validColourWords = ['red', 'blue', 'green', 'yellow', 'pink', 'purple', 'orange', 'brown', 'black', 'white', 'gray', 'silver', 'gold', 'navy', 'teal', 'olive', 'maroon', 'aqua', 'coral', 'indigo', 'lavender', 'mint', 'peach', 'ruby', 'turquoise', 'violet', 'amber', 'charcoal', 'emerald', 'fuchsia'];
