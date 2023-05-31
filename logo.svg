@@ -1,8 +1,8 @@
 
     <svg xmlns="http://www.w3.org/2000/svg" width="300" height="200" viewBox="0 0 300 200">
       <g transform="translate(150 100)">
-        <polygon points="-120,86 120,86 0,-86" fill="pink" />
-        <text x="0" y="0" dominant-baseline="middle" text-anchor="middle" fill="green" font-size="90" style="font-family: Papyrus;">IGY</text>
+        <circle cx="0" cy="0" r="80" fill="red"/>
+        <text x="0" y="0" dominant-baseline="middle" text-anchor="middle" fill="green" font-size="90" style="font-family: Papyrus;">IGG</text>
       </g>
     </svg>
   
